@@ -13,7 +13,7 @@ param (
     [String]
     $INPUT_END_DATE = "2024-02-22"  # end date in format like : 2020-01-01 YYYY-MM-DD
 )
-
+ 
 #FIRST RESULT for BTC-USDT START FROM EPOCH TIME : 1508307840 = Wednesday, October 18, 2017 6:24:00 AM
 
 #https://www.kucoin.com/docs/rest/spot-trading/market-data/get-klines#http-request
