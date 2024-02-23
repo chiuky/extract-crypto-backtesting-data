@@ -2,7 +2,7 @@
 param (
     [Parameter()]
     [String]
-    $INPUT_TYPE = "1day", # type od the candle
+    $INPUT_TYPE = "6hour", # type od the candle
     [Parameter()]
     [String]
     $INPUT_SYMBOL = "BTC-USDT", # currency pair  :BTC-USDT
