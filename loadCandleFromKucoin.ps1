@@ -79,7 +79,7 @@ $iteration = [math]::ceiling( $iteration) #arrotondamento all'intero successivo 
 #Write-Host $stepSize ;
 Write-Host "API call required" $iteration
 
-if ($iteration -le 1) {
+if ($iteration -lt 1) {
     $iteration++ #to manage small interval : <1500 candles(based on the candle type)
     $stepSize = [int]$END_DATE - [int]$START_DATE
 }
@@ -96,7 +96,7 @@ for ($i = 0; $i -lt $iteration; $i++) {
     $tacOut = $jqOut | tac $1 
     $tacOut >> $FILE_NAME ;
     
-    $START_DATE = [int]$END_DATE + ($secInCandle);
+    $START_DATE = $END_DATE + $secInCandle;
     Write-Host "######"
     Write-Host  "API call #" $($i + 1) "/" $iteration
     $loadedCandles = (Get-Content $FILE_NAME).Length - 1; #CSV header to not be considered 
