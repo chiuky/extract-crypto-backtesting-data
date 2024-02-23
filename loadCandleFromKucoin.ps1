@@ -21,7 +21,9 @@ param (
 #symbol	String	Yes	symbol
 #startAt	long	No	Start time (second), default is 0
 #endAt	long	No	End time (second), default is 0
-#type	String	Yes	Type of candlestick patterns: 1min, 3min, 5min, 15min, 30min, 1hour, 2hour, 4hour, 6hour, 8hour, 12hour, 1day, 1week
+#type	String	Yes	Type of candlestick patterns: 
+# 1min, 3min, 5min, 15min, 30min, 
+# 1hour, 2hour, 4hour, 6hour, 8hour, 12hour, 1day, 1week
 #var math=require(Math)
 
 #secInCandle : Example for 1day =  24 * 60 * 60 #hours in a day *min in a hour *sec in a min
@@ -38,7 +40,7 @@ elseif ($INPUT_TYPE -eq "8hour") { $secInCandle = 8 * 60 * 60 }
 elseif ($INPUT_TYPE -eq "12hour") { $secInCandle = 12 * 60 * 60 }
 elseif ($INPUT_TYPE -eq "1day") { $secInCandle = 24 * 60 * 60 }
 elseif ($INPUT_TYPE -eq "1week" ) { $secInCandle = 7 * 24 * 60 * 60 } else {
-    Write-Host "$INPUT_TYPE :  Not valid value ! "
+    Write-Host "$INPUT_TYPE :  Not valid value !!! "
     exit #stop the script execution
 }
 
@@ -103,7 +105,4 @@ for ($i = 0; $i -lt $iteration; $i++) {
         Write-Host "The api returned a number of candle smallest of the expeted , probably because does not contains all result for the requested interval"
         #$i=$iteration 
     }
-    
-       
-
 }
