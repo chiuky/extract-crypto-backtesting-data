@@ -8,10 +8,10 @@ param (
     $INPUT_SYMBOL = "BTC-USDT", # currency pair  :BTC-USDT
     [Parameter()]
     [String]
-    $INPUT_START_DATE = "2017-10-19", # start date in format like : 2020-01-01  YYYY-MM-DD
+    $INPUT_START_DATE = "2024-01-01", # start date in format like : 2020-01-01  YYYY-MM-DD
     [Parameter()]
     [String]
-    $INPUT_END_DATE = "2024-02-22"  # end date in format like : 2020-01-01 YYYY-MM-DD
+    $INPUT_END_DATE = "2024-01-02"  # end date in format like : 2020-01-01 YYYY-MM-DD
 )
  
 #FIRST RESULT for BTC-USDT START FROM EPOCH TIME : 1508307840 = Wednesday, October 18, 2017 6:24:00 AM
@@ -56,7 +56,7 @@ $TYPE = $INPUT_TYPE;
 $SYMBOL = $INPUT_SYMBOL;
 $START_DATE = Get-Date -Date $INPUT_START_DATE$timeFormatSuffix -UFormat %s ;
 $END_DATE = Get-Date -Date $INPUT_END_DATE$timeFormatSuffix  -UFormat %s ; #now
-$FILE_NAME = "candles-for-backtesting-CANDLES_FROM_$($INPUT_START_DATE)_TO_$($INPUT_END_DATE)_$($TYPE)_$($SYMBOL).csv";
+$FILE_NAME = "candles-for-backtesting-FROM_$($INPUT_START_DATE)_TO_$($INPUT_END_DATE)_$($TYPE)_$($SYMBOL).csv";
 
 Write-Host "CANDLE_TYPE :" $TYPE
 Write-Host "SYMBOL :" $SYMBOL
